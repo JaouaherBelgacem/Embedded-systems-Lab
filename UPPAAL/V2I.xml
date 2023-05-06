@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<declaration>// Place global declarations here.
+chan Communicate, Left ,Right, Straight, Priority, end;</declaration>
+	<template>
+		<name x="5" y="5">Infrastructure</name>
+		<declaration>// Place local declarations here.</declaration>
+		<location id="id0" x="297" y="-25">
+			<name x="287" y="-59">Idle</name>
+		</location>
+		<location id="id1" x="306" y="76">
+			<name x="323" y="34">Process</name>
+		</location>
+		<location id="id2" x="374" y="144">
+			<name x="364" y="110">Queue</name>
+		</location>
+		<location id="id3" x="212" y="153">
+			<name x="161" y="119">RightLane</name>
+		</location>
+		<location id="id4" x="348" y="221">
+			<name x="272" y="170">StraightLane</name>
+		</location>
+		<location id="id5" x="450" y="204">
+			<name x="459" y="161">LeftLane</name>
+		</location>
+		<location id="id6" x="246" y="510">
+			<name x="204" y="527">Destination</name>
+		</location>
+		<init ref="id0"/>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id6"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id6"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id4"/>
+			<label kind="synchronisation" x="221" y="204">Priority?</label>
+			<nail x="272" y="263"/>
+			<nail x="280" y="187"/>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id5"/>
+			<label kind="synchronisation" x="510" y="119">Priority?</label>
+			<nail x="459" y="110"/>
+			<nail x="527" y="170"/>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id0"/>
+			<nail x="110" y="119"/>
+			<nail x="204" y="51"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id6"/>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id5"/>
+			<label kind="synchronisation" x="392" y="157">Left?</label>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id4"/>
+			<label kind="synchronisation" x="361" y="165">Straight?</label>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id2"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id3"/>
+			<label kind="synchronisation" x="204" y="85">Right?</label>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id1"/>
+			<label kind="synchronisation" x="301" y="8">Communicate?</label>
+		</transition>
+	</template>
+	<template>
+		<name>CarRight</name>
+		<location id="id7" x="-484" y="-34">
+			<name x="-494" y="-68">Start</name>
+		</location>
+		<location id="id8" x="-306" y="-34">
+			<name x="-323" y="-17">Wait</name>
+		</location>
+		<location id="id9" x="-178" y="-34">
+			<name x="-204" y="-17">turnRight</name>
+		</location>
+		<location id="id10" x="-25" y="-34">
+			<name x="-35" y="-68">end</name>
+		</location>
+		<init ref="id7"/>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id8"/>
+			<label kind="synchronisation" x="-348" y="-161">Priority!</label>
+			<nail x="-391" y="-136"/>
+			<nail x="-289" y="-127"/>
+			<nail x="-289" y="-127"/>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id10"/>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id9"/>
+			<label kind="synchronisation" x="-288" y="-51">Right!</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id8"/>
+			<label kind="synchronisation" x="-442" y="-51">Communicate!</label>
+		</transition>
+	</template>
+	<template>
+		<name>CarStraight</name>
+		<location id="id11" x="-94" y="0">
+			<name x="-111" y="17">Wait</name>
+		</location>
+		<location id="id12" x="34" y="0">
+			<name x="8" y="17">goStraight</name>
+		</location>
+		<location id="id13" x="187" y="0">
+			<name x="177" y="-34">end</name>
+		</location>
+		<location id="id14" x="-272" y="0">
+			<name x="-282" y="-34">Start</name>
+		</location>
+		<init ref="id14"/>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id11"/>
+			<label kind="synchronisation" x="-136" y="-127">Priority!</label>
+			<nail x="-179" y="-102"/>
+			<nail x="-77" y="-93"/>
+			<nail x="-77" y="-93"/>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id13"/>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id12"/>
+			<label kind="synchronisation" x="-76" y="-17">Straight!</label>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id11"/>
+			<label kind="synchronisation" x="-230" y="-17">Communicate!</label>
+		</transition>
+	</template>
+	<template>
+		<name>CarLeft</name>
+		<location id="id15" x="-306" y="-34">
+			<name x="-323" y="-17">Wait</name>
+		</location>
+		<location id="id16" x="-178" y="-34">
+			<name x="-204" y="-17">turnLeft</name>
+		</location>
+		<location id="id17" x="-25" y="-34">
+			<name x="-35" y="-68">end</name>
+		</location>
+		<location id="id18" x="-484" y="-34">
+			<name x="-494" y="-68">Start</name>
+		</location>
+		<init ref="id18"/>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id15"/>
+			<label kind="synchronisation" x="-348" y="-161">Priority!</label>
+			<nail x="-391" y="-136"/>
+			<nail x="-289" y="-127"/>
+			<nail x="-289" y="-127"/>
+		</transition>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id17"/>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id16"/>
+			<label kind="synchronisation" x="-288" y="-51">Left!</label>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id15"/>
+			<label kind="synchronisation" x="-442" y="-51">Communicate!</label>
+		</transition>
+	</template>
+	<system>// Place template instantiations here.
+Process = Infrastructure();
+Car1 = CarRight();
+Car3 = CarLeft();
+Car5 = CarStraight();
+// List one or more processes to be composed into a system.
+system Process,Car1,Car3,Car5;
+    </system>
+	<queries>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+	</queries>
+</nta>
