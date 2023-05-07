@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<declaration>// Place global declarations here.
+chan continue;
+int distance;
+const int SafeDistance = 3;
+const int StopDistance = 1;</declaration>
+	<template>
+		<name x="5" y="5">Car1</name>
+		<location id="id0" x="-93" y="-195">
+			<name x="-103" y="-229">Driving</name>
+		</location>
+		<location id="id1" x="-93" y="-323">
+		</location>
+		<init ref="id1"/>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id0"/>
+			<label kind="synchronisation" x="-93" y="-276">continue?</label>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id0"/>
+			<nail x="-229" y="-59"/>
+			<nail x="34" y="-59"/>
+		</transition>
+	</template>
+	<template>
+		<name>Car2</name>
+		<location id="id2" x="-297" y="-391">
+			<name x="-307" y="-425">Driving</name>
+		</location>
+		<location id="id3" x="-467" y="-59">
+			<name x="-477" y="-93">SlowDown</name>
+		</location>
+		<location id="id4" x="-297" y="-289">
+			<name x="-307" y="-323">CheckDistance</name>
+		</location>
+		<location id="id5" x="-221" y="-68">
+			<name x="-231" y="-102">Stop</name>
+		</location>
+		<location id="id6" x="-467" y="-187">
+			<name x="-477" y="-221">CollisionWarning</name>
+		</location>
+		<location id="id7" x="-297" y="-493">
+		</location>
+		<init ref="id7"/>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id2"/>
+			<label kind="synchronisation" x="-297" y="-459">continue!</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id4"/>
+			<nail x="-93" y="-212"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id2"/>
+			<nail x="-476" y="-391"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id5"/>
+			<label kind="guard" x="-279" y="-212">distance&lt;StopDistance</label>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id4"/>
+			<nail x="-348" y="-85"/>
+			<nail x="-348" y="-102"/>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id3"/>
+			<label kind="guard" x="-467" y="-157">distance&lt;SafeDistance</label>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id6"/>
+			<label kind="guard" x="-449" y="-272">distance&lt;SafeDistance</label>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id4"/>
+		</transition>
+	</template>
+	<system>// Place template instantiations here.
+C1 = Car1();
+C2 = Car2();
+// List one or more processes to be composed into a system.
+system C1 , C2;
+    </system>
+	<queries>
+		<query>
+			<formula>A[] not deadlock</formula>
+			<comment></comment>
+		</query>
+	</queries>
+</nta>
