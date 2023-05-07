@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<declaration>// Place global declarations here.
+chan requestSent, wait, AckSent, carExists;
+int isPrio;
+chan isLeft;</declaration>
+	<template>
+		<name x="5" y="5">Interface</name>
+		<declaration>// Place local declarations here.
+</declaration>
+		<location id="id0" x="8" y="0">
+			<name x="-2" y="-34">idle</name>
+		</location>
+		<location id="id1" x="416" y="-8">
+			<name x="425" y="-42">decision</name>
+		</location>
+		<location id="id2" x="212" y="297">
+			<name x="195" y="306">Queue</name>
+		</location>
+		<location id="id3" x="221" y="93">
+			<name x="205" y="101">cross</name>
+		</location>
+		<init ref="id0"/>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id0"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id0"/>
+			<label kind="synchronisation" x="93" y="59">isLeft?</label>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id3"/>
+			<label kind="synchronisation" x="263" y="25">AckSent!</label>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id2"/>
+			<label kind="synchronisation" x="280" y="238">wait!</label>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id1"/>
+			<label kind="synchronisation" x="161" y="-25">requestSent?</label>
+		</transition>
+	</template>
+	<template>
+		<name>Vehicle</name>
+		<location id="id4" x="-42" y="-136">
+			<name x="-52" y="-170">Drive</name>
+		</location>
+		<location id="id5" x="-42" y="59">
+			<name x="-17" y="34">Intersection</name>
+		</location>
+		<location id="id6" x="-119" y="170">
+			<name x="-144" y="127">cross</name>
+		</location>
+		<location id="id7" x="34" y="170">
+			<name x="25" y="136">stop</name>
+		</location>
+		<location id="id8" x="-34" y="280">
+			<name x="-51" y="289">remove</name>
+		</location>
+		<init ref="id4"/>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id7"/>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id8"/>
+			<label kind="synchronisation" x="-136" y="212">isLeft!</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id5"/>
+			<label kind="synchronisation" x="136" y="102">requestSent!</label>
+			<nail x="126" y="170"/>
+			<nail x="126" y="59"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id5"/>
+			<label kind="synchronisation" x="-34" y="-51">requestSent!</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id6"/>
+			<label kind="synchronisation" x="-136" y="85">AckSent?</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id7"/>
+			<label kind="synchronisation" x="0" y="93">wait?</label>
+		</transition>
+	</template>
+	<system>// Place template instantiations here.
+Process = Interface();
+Car = Vehicle();
+// List one or more processes to be composed into a system.
+system Process, Car;
+    </system>
+	<queries>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+	</queries>
+</nta>
