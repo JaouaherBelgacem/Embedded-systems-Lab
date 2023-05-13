@@ -75,7 +75,7 @@ chan Communicate, Left ,Right, Straight, Priority, end;</declaration>
 			<target ref="id2"/>
 		</transition>
 		<transition>
-			<source ref="id1"/>
+			<source ref="id2"/>
 			<target ref="id3"/>
 			<label kind="synchronisation" x="204" y="85">Right?</label>
 		</transition>
@@ -93,13 +93,18 @@ chan Communicate, Left ,Right, Straight, Priority, end;</declaration>
 		<location id="id8" x="-306" y="-34">
 			<name x="-323" y="-17">Wait</name>
 		</location>
-		<location id="id9" x="-178" y="-34">
-			<name x="-204" y="-17">turnRight</name>
+		<location id="id9" x="-161" y="-34">
+			<name x="-187" y="-17">turnRight</name>
 		</location>
 		<location id="id10" x="-25" y="-34">
 			<name x="-35" y="-68">end</name>
 		</location>
 		<init ref="id7"/>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id7"/>
+			<nail x="-331" y="170"/>
+		</transition>
 		<transition>
 			<source ref="id8"/>
 			<target ref="id8"/>
@@ -128,8 +133,8 @@ chan Communicate, Left ,Right, Straight, Priority, end;</declaration>
 		<location id="id11" x="-94" y="0">
 			<name x="-111" y="17">Wait</name>
 		</location>
-		<location id="id12" x="34" y="0">
-			<name x="8" y="17">goStraight</name>
+		<location id="id12" x="85" y="0">
+			<name x="59" y="17">goStraight</name>
 		</location>
 		<location id="id13" x="187" y="0">
 			<name x="177" y="-34">end</name>
@@ -138,6 +143,12 @@ chan Communicate, Left ,Right, Straight, Priority, end;</declaration>
 			<name x="-282" y="-34">Start</name>
 		</location>
 		<init ref="id14"/>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id14"/>
+			<nail x="-42" y="212"/>
+			<nail x="-42" y="212"/>
+		</transition>
 		<transition>
 			<source ref="id11"/>
 			<target ref="id11"/>
@@ -176,6 +187,11 @@ chan Communicate, Left ,Right, Straight, Priority, end;</declaration>
 			<name x="-494" y="-68">Start</name>
 		</location>
 		<init ref="id18"/>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id18"/>
+			<nail x="-263" y="144"/>
+		</transition>
 		<transition>
 			<source ref="id15"/>
 			<target ref="id15"/>
