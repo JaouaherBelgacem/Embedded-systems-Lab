@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<declaration>// Place global declarations here.
+chan fromNorth,fromEast,fromSouth,fromWest,E,N,S,W;</declaration>
+	<template>
+		<name>South</name>
+		<location id="id0" x="144" y="17">
+		</location>
+		<location id="id1" x="-357" y="34">
+		</location>
+		<location id="id2" x="-25" y="136">
+		</location>
+		<location id="id3" x="0" y="8">
+		</location>
+		<location id="id4" x="-17" y="-93">
+		</location>
+		<location id="id5" x="-178" y="34">
+		</location>
+		<init ref="id1"/>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id1"/>
+			<nail x="42" y="-153"/>
+			<nail x="-306" y="-153"/>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id0"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id0"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id0"/>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id2"/>
+			<label kind="synchronisation" x="-160" y="68">W!</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id3"/>
+			<label kind="synchronisation" x="-160" y="4">E!</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id4"/>
+			<label kind="synchronisation" x="-160" y="-46">N!</label>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id5"/>
+			<label kind="synchronisation" x="-339" y="17">fromSouth!</label>
+		</transition>
+	</template>
+	<template>
+		<name>North</name>
+		<location id="id6" x="144" y="17">
+		</location>
+		<location id="id7" x="-357" y="34">
+		</location>
+		<location id="id8" x="-25" y="136">
+		</location>
+		<location id="id9" x="0" y="8">
+		</location>
+		<location id="id10" x="-17" y="-93">
+		</location>
+		<location id="id11" x="-178" y="34">
+		</location>
+		<init ref="id7"/>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id7"/>
+			<nail x="42" y="-153"/>
+			<nail x="-306" y="-153"/>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id6"/>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id6"/>
+		</transition>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id6"/>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id8"/>
+			<label kind="synchronisation" x="-160" y="68">W!</label>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id9"/>
+			<label kind="synchronisation" x="-160" y="4">S!</label>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id10"/>
+			<label kind="synchronisation" x="-160" y="-46">E!</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id11"/>
+			<label kind="synchronisation" x="-339" y="17">fromNorth!</label>
+		</transition>
+	</template>
+	<template>
+		<name>West</name>
+		<location id="id12" x="144" y="17">
+		</location>
+		<location id="id13" x="-357" y="34">
+		</location>
+		<location id="id14" x="-25" y="136">
+		</location>
+		<location id="id15" x="0" y="8">
+		</location>
+		<location id="id16" x="-17" y="-93">
+		</location>
+		<location id="id17" x="-178" y="34">
+		</location>
+		<init ref="id13"/>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id13"/>
+			<nail x="42" y="-153"/>
+			<nail x="-306" y="-153"/>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id12"/>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id12"/>
+		</transition>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id12"/>
+		</transition>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id14"/>
+			<label kind="synchronisation" x="-160" y="68">E!</label>
+		</transition>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id15"/>
+			<label kind="synchronisation" x="-160" y="4">S!</label>
+		</transition>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id16"/>
+			<label kind="synchronisation" x="-160" y="-46">N!</label>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id17"/>
+			<label kind="synchronisation" x="-339" y="17">fromWest!</label>
+		</transition>
+	</template>
+	<template>
+		<name>East</name>
+		<location id="id18" x="-357" y="34">
+		</location>
+		<location id="id19" x="-178" y="34">
+		</location>
+		<location id="id20" x="-17" y="-93">
+		</location>
+		<location id="id21" x="0" y="8">
+		</location>
+		<location id="id22" x="-25" y="136">
+		</location>
+		<location id="id23" x="144" y="17">
+		</location>
+		<init ref="id18"/>
+		<transition>
+			<source ref="id23"/>
+			<target ref="id18"/>
+			<nail x="42" y="-153"/>
+			<nail x="-306" y="-153"/>
+		</transition>
+		<transition>
+			<source ref="id22"/>
+			<target ref="id23"/>
+		</transition>
+		<transition>
+			<source ref="id21"/>
+			<target ref="id23"/>
+		</transition>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id23"/>
+		</transition>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id22"/>
+			<label kind="synchronisation" x="-160" y="68">W!</label>
+		</transition>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id21"/>
+			<label kind="synchronisation" x="-160" y="4">S!</label>
+		</transition>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id20"/>
+			<label kind="synchronisation" x="-160" y="-46">N!</label>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id19"/>
+			<label kind="synchronisation" x="-339" y="17">fromEast!</label>
+		</transition>
+	</template>
+	<template>
+		<name x="5" y="5">Intersection</name>
+		<declaration>// Place local declarations here.</declaration>
+		<location id="id24" x="187" y="-161">
+		</location>
+		<location id="id25" x="187" y="-34">
+		</location>
+		<location id="id26" x="-25" y="59">
+			<name x="-35" y="25">Intersection1</name>
+		</location>
+		<location id="id27" x="93" y="76">
+			<name x="83" y="42">Intersection2</name>
+		</location>
+		<location id="id28" x="280" y="68">
+			<name x="270" y="34">Intersection3</name>
+		</location>
+		<location id="id29" x="399" y="59">
+			<name x="389" y="25">Intersection4</name>
+		</location>
+		<location id="id30" x="-34" y="272">
+			<name x="-44" y="238">intersection1</name>
+		</location>
+		<location id="id31" x="93" y="263">
+			<name x="83" y="229">intersection2</name>
+		</location>
+		<location id="id32" x="323" y="263">
+			<name x="313" y="229">intersection3</name>
+		</location>
+		<location id="id33" x="467" y="255">
+			<name x="448" y="221">intersection4</name>
+		</location>
+		<location id="id34" x="212" y="382">
+		</location>
+		<init ref="id24"/>
+		<transition>
+			<source ref="id34"/>
+			<target ref="id24"/>
+			<nail x="-246" y="374"/>
+			<nail x="-212" y="8"/>
+		</transition>
+		<transition>
+			<source ref="id33"/>
+			<target ref="id34"/>
+		</transition>
+		<transition>
+			<source ref="id32"/>
+			<target ref="id34"/>
+		</transition>
+		<transition>
+			<source ref="id31"/>
+			<target ref="id34"/>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id34"/>
+		</transition>
+		<transition>
+			<source ref="id28"/>
+			<target ref="id31"/>
+			<label kind="synchronisation" x="212" y="110">N?</label>
+		</transition>
+		<transition>
+			<source ref="id28"/>
+			<target ref="id33"/>
+			<label kind="synchronisation" x="365" y="136">E?</label>
+		</transition>
+		<transition>
+			<source ref="id28"/>
+			<target ref="id32"/>
+			<label kind="synchronisation" x="301" y="148">S?</label>
+		</transition>
+		<transition>
+			<source ref="id26"/>
+			<target ref="id33"/>
+			<label kind="synchronisation" x="25" y="59">E?</label>
+		</transition>
+		<transition>
+			<source ref="id26"/>
+			<target ref="id32"/>
+			<label kind="synchronisation" x="8" y="93">S?</label>
+		</transition>
+		<transition>
+			<source ref="id26"/>
+			<target ref="id30"/>
+			<label kind="synchronisation" x="-85" y="102">W?</label>
+		</transition>
+		<transition>
+			<source ref="id27"/>
+			<target ref="id32"/>
+			<label kind="synchronisation" x="127" y="85">S?</label>
+		</transition>
+		<transition>
+			<source ref="id27"/>
+			<target ref="id30"/>
+			<label kind="synchronisation" x="8" y="153">W?</label>
+		</transition>
+		<transition>
+			<source ref="id27"/>
+			<target ref="id31"/>
+			<label kind="synchronisation" x="93" y="152">N?</label>
+		</transition>
+		<transition>
+			<source ref="id29"/>
+			<target ref="id30"/>
+			<label kind="synchronisation" x="348" y="59">W?</label>
+		</transition>
+		<transition>
+			<source ref="id29"/>
+			<target ref="id31"/>
+			<label kind="synchronisation" x="365" y="85">N?</label>
+		</transition>
+		<transition>
+			<source ref="id29"/>
+			<target ref="id33"/>
+			<label kind="synchronisation" x="442" y="136">E?</label>
+		</transition>
+		<transition>
+			<source ref="id25"/>
+			<target ref="id28"/>
+			<label kind="synchronisation" x="205" y="0">fromWest?</label>
+		</transition>
+		<transition>
+			<source ref="id25"/>
+			<target ref="id29"/>
+			<label kind="synchronisation" x="289" y="-17">fromSouth?</label>
+		</transition>
+		<transition>
+			<source ref="id25"/>
+			<target ref="id27"/>
+			<label kind="synchronisation" x="111" y="4">fromEast?</label>
+		</transition>
+		<transition>
+			<source ref="id25"/>
+			<target ref="id26"/>
+			<label kind="synchronisation" x="-7" y="-5">fromNorth?</label>
+		</transition>
+		<transition>
+			<source ref="id24"/>
+			<target ref="id25"/>
+		</transition>
+	</template>
+	<system>// Place template instantiations here.
+Process = Intersection();
+east = East();
+west = West();
+north = North();
+south = South();
+// List one or more processes to be composed into a system.
+system Process,east,west,north,south;
+    </system>
+	<queries>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+	</queries>
+</nta>
