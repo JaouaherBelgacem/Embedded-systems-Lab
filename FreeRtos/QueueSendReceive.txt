@@ -1,0 +1,69 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
+#include "timers.h"
+
+TaskHandle_t txTask_Handle = NULL;
+TaskHandle_t rxTask_Handle = NULL;
+QueueHandle_t IntersectionQueue;
+
+/*int CarIDCreate()
+{
+ carID = rand (50);
+	return carID;
+}*/
+
+void txTask( void *p)
+{
+	// to randomize an integer number between 0-50
+ int carID = rand() % 50;
+	xQueueSend(IntersectionQueue, (void *p)&carID, pdMS_TO_TICKS(200) );
+	printf("Is sent: %d /n", carID);
+	
+	while(1)
+	{
+		vTaskDelay(pdMS_TO_TICKS(2000));
+	}
+}
+
+void rxTask (void *p)
+{
+	int carID;
+	while(1)
+	{
+		if(xQueueReceive(IntersectionQueue, &carID, pdMS_TO_TICKS(200)))
+		{
+			printf("Is received: %d /n", carID);
+		}
+	}
+}
+void main()
+{
+int carID; 
+	
+	// create the queue for intersection of size 5
+IntersectionQueue = xQueueCreate(5, sizeof(int));
+	
+	//Availability
+
+printf("Queue is still available : %d \n", uxQueueSpacesAvailable (IntersectionQueue));
+
+	// write Car IDs "data" to the queue
+xTaskCreate(txTask, "Send Task", 4096, NULL, 10, &txTask_Handle );
+vTaskDelay(pdMS_TO_TICKS(800));
+	
+	//Availability
+printf("Queue availablity after writing : %d´ \n", uxQueueSpacesAvailable (IntersectionQueue));
+
+	// REad Car IDs from the queue
+xTaskCreate(rxTask, "Receive Task", 4096, NULL, 10, &rxTask_Handle );
+vTaskDelay(pdMS_TO_TICKS(800));
+	
+	// to check whether the queue is empty
+printf("Queue is empty or not : %d \n", uxQueueSpacesAvailable (IntersectionQueue));
+
+vTaskStartScheduler();
+
+}
