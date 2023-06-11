@@ -54,11 +54,15 @@ void intersectionControllerTask(void* parameter) {
       }
       Serial.println();
       vTaskDelay(1000); // Simulate the car passing through the intersection
-      Serial.printf("Car ID: %d (Approaching from: %s) is allowed to cross the junction.\n", car.id, roadNames[car.roadIndex]);
+      Serial.printf("                                                                         Car ID: %d (Approaching from: %s) is allowed to cross the junction.\n", car.id, roadNames[car.roadIndex]);
+      Serial.println("All othe cars are NOt allowed to enter junction");
+      Serial.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+       
       count++;
     } else if (xQueueReceive(eastQueue, &car, 0) == pdTRUE) {
       // Allow the car to pass from the East road
       Serial.printf("Car ID: %d, Approaching from: %s road, Wants to turn: ", car.id, roadNames[car.roadIndex]);
+      
       switch (car.turnDirection) {
         case ROCK:
           Serial.print("Right");
@@ -75,7 +79,9 @@ void intersectionControllerTask(void* parameter) {
       }
       Serial.println();
       vTaskDelay(1000); // Simulate the car passing through the intersection
-      Serial.printf("Car ID: %d (Approaching from: %s) is allowed to cross the junction.\n", car.id, roadNames[car.roadIndex]);
+      Serial.printf("                                                                         Car ID: %d (Approaching from: %s) is allowed to cross the junction.\n", car.id, roadNames[car.roadIndex]);
+      Serial.println("All othe cars are NOt allowed to enter junction");
+      Serial.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
       count++;
     } else if (xQueueReceive(southQueue, &car, 0) == pdTRUE) {
       // Allow the car to pass from the South road
@@ -96,11 +102,13 @@ void intersectionControllerTask(void* parameter) {
       }
       Serial.println();
       vTaskDelay(1000); // Simulate the car passing through the intersection
-      Serial.printf("Car ID: %d (Approaching from: %s) is allowed to cross the junction.\n", car.id, roadNames[car.roadIndex]);
+       Serial.printf("                                                                         Car ID: %d (Approaching from: %s) is allowed to cross the junction.\n", car.id, roadNames[car.roadIndex]);
+      Serial.println("All othe cars are NOt allowed to enter junction");
+      Serial.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
       count++;
     } else if (xQueueReceive(westQueue, &car, 0) == pdTRUE) {
       // Allow the car to pass from the West road
-      Serial.printf("Car ID: %d, Approaching from: %s road, Wants to turn: ", car.id, roadNames[car.roadIndex]);
+      Serial.printf("Car ID: %d, Approaching from:--> %s road, Wants to turn:---> ", car.id, roadNames[car.roadIndex]);
       switch (car.turnDirection) {
         case ROCK:
           Serial.print("Left");
@@ -117,7 +125,9 @@ void intersectionControllerTask(void* parameter) {
       }
       Serial.println();
       vTaskDelay(1000); // Simulate the car passing through the intersection
-      Serial.printf("Car ID: %d (Approaching from: %s) is allowed to cross the junction.\n", car.id, roadNames[car.roadIndex]);
+       Serial.printf("                                                                         Car ID: %d (Approaching from: %s) is allowed to cross the junction.\n", car.id, roadNames[car.roadIndex]);
+      Serial.println("All othe cars are NOt allowed to enter junction");
+      Serial.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
       count++;
     }
 
@@ -149,7 +159,7 @@ void loop() {
     northCar.roadIndex = 0; // North road index
     northCar.turnDirection = static_cast<TurnDirection>(random(1, 4));
     xQueueSend(northQueue, &northCar, portMAX_DELAY);
-    Serial.printf("Car ID: %d, Approaching from: %s road, Wants to turn: ", northCar.id, roadNames[northCar.roadIndex]);
+    Serial.printf("Car ID: %d, Approaching from:--> %s road, Wants to turn:---> ", northCar.id, roadNames[northCar.roadIndex]);
     switch (northCar.turnDirection) {
       case ROCK:
         Serial.print("U-turn");
@@ -174,7 +184,7 @@ void loop() {
     eastCar.roadIndex = 1; // East road index
     eastCar.turnDirection = static_cast<TurnDirection>(random(0, 4));
     xQueueSend(eastQueue, &eastCar, portMAX_DELAY);
-    Serial.printf("Car ID: %d, Approaching from: %s road, Wants to turn: ", eastCar.id, roadNames[eastCar.roadIndex]);
+    Serial.printf("Car ID: %d, Approaching from:--> %s road, Wants to turn:---> ", eastCar.id, roadNames[eastCar.roadIndex]);
     switch (eastCar.turnDirection) {
       case ROCK:
         Serial.print("Right");
@@ -199,7 +209,7 @@ void loop() {
     southCar.roadIndex = 2; // South road index
     southCar.turnDirection = static_cast<TurnDirection>(random(0, 4));
     xQueueSend(southQueue, &southCar, portMAX_DELAY);
-    Serial.printf("Car ID: %d, Approaching from: %s road, Wants to turn: ", southCar.id, roadNames[southCar.roadIndex]);
+    Serial.printf("Car ID: %d, Approaching from:--> %s road, Wants to turn:---> ", southCar.id, roadNames[southCar.roadIndex]);
     switch (southCar.turnDirection) {
       case ROCK:
         Serial.print("Straight");
@@ -224,7 +234,7 @@ void loop() {
     westCar.roadIndex = 3; // West road index
     westCar.turnDirection = static_cast<TurnDirection>(random(0, 3));
     xQueueSend(westQueue, &westCar, portMAX_DELAY);
-    Serial.printf("Car ID: %d, Approaching from: %s road, Wants to turn: ", westCar.id, roadNames[westCar.roadIndex]);
+    Serial.printf("Car ID: %d, Approaching from:--> %s road, Wants to turn:---> ", westCar.id, roadNames[westCar.roadIndex]);
     switch (westCar.turnDirection) {
       case ROCK:
         Serial.print("Left");
