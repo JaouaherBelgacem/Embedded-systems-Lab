@@ -1,0 +1,1286 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/20.1
+Ebcd
+Z0 w1685280935
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 303
+Z3 dC:/Users/ACER/Desktop/VHDL_Labs
+Z4 8C:/Users/ACER/Desktop/VHDL_Labs/BCD.vhd
+Z5 FC:/Users/ACER/Desktop/VHDL_Labs/BCD.vhd
+l0
+L4 1
+VX9@eT1??3V]c0FlzDWEko2
+!s100 :I4T3b]D5N:TkC@Z5?AaY3
+Z6 OV;C;2020.1;71
+32
+Z7 !s110 1686048152
+!i10b 1
+Z8 !s108 1686048152.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/BCD.vhd|
+Z10 !s107 C:/Users/ACER/Desktop/VHDL_Labs/BCD.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Adecoder
+R1
+R2
+DEx4 work 3 bcd 0 22 X9@eT1??3V]c0FlzDWEko2
+!i122 303
+l11
+L10 12
+Va@^QcjlaGa3<^a=Eo>a`82
+!s100 EJYh=KgOfoj?jehZK>H`23
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ebcdaddseven
+Z13 w1685297725
+R1
+R2
+!i122 305
+R3
+Z14 8C:/Users/ACER/Desktop/VHDL_Labs/BCDaddSeven.vhd
+Z15 FC:/Users/ACER/Desktop/VHDL_Labs/BCDaddSeven.vhd
+l0
+L4 1
+VhWRS@d^[eE@ZXRWUU>5N:0
+!s100 o;NzN[i5`l?ZAW@TJG<oV0
+R6
+32
+Z16 !s110 1686048153
+!i10b 1
+Z17 !s108 1686048153.000000
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/BCDaddSeven.vhd|
+Z19 !s107 C:/Users/ACER/Desktop/VHDL_Labs/BCDaddSeven.vhd|
+!i113 1
+R11
+R12
+Adecoder
+R1
+R2
+DEx4 work 11 bcdaddseven 0 22 hWRS@d^[eE@ZXRWUU>5N:0
+!i122 305
+l33
+L15 37
+VAfD[C6cd5_S;n<NA9nDQT2
+!s100 UeD6:EAe]BC54<PQEDGlZ1
+R6
+32
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R11
+R12
+Ebcdaddseventb
+Z20 w1685298774
+R1
+R2
+!i122 308
+R3
+Z21 8C:/Users/ACER/Desktop/VHDL_Labs/BCDaddSevenTb.vhd
+Z22 FC:/Users/ACER/Desktop/VHDL_Labs/BCDaddSevenTb.vhd
+l0
+L4 1
+Va3IibKBedjzm<94aH=B`=2
+!s100 _RIJOU_[G^Sb3I2aM6C_D0
+R6
+32
+Z23 !s110 1686048154
+!i10b 1
+Z24 !s108 1686048154.000000
+Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/BCDaddSevenTb.vhd|
+Z26 !s107 C:/Users/ACER/Desktop/VHDL_Labs/BCDaddSevenTb.vhd|
+!i113 1
+R11
+R12
+Atestt
+R1
+R2
+DEx4 work 13 bcdaddseventb 0 22 a3IibKBedjzm<94aH=B`=2
+!i122 308
+l24
+L7 58
+V=oRNMdE0KQJ5Wh8A2=k2b0
+!s100 m8LGT=1:?4>RTn`cok4BR1
+R6
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R11
+R12
+Ebcdd
+Z27 w1685295878
+R1
+R2
+!i122 306
+R3
+Z28 8C:/Users/ACER/Desktop/VHDL_Labs/BCDd.vhd
+Z29 FC:/Users/ACER/Desktop/VHDL_Labs/BCDd.vhd
+l0
+L4 1
+VT@SZP2?m;j_b`hD7I^bOk3
+!s100 ^gLNeESW;ETZd2mcih`X<3
+R6
+32
+R16
+!i10b 1
+R17
+Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/BCDd.vhd|
+Z31 !s107 C:/Users/ACER/Desktop/VHDL_Labs/BCDd.vhd|
+!i113 1
+R11
+R12
+Atest
+R1
+R2
+DEx4 work 4 bcdd 0 22 T@SZP2?m;j_b`hD7I^bOk3
+!i122 306
+l12
+L11 32
+VODJ<o3<?jA?EPgT@aFTmc3
+!s100 MD2olJG3F5=:^;7hQcChz2
+R6
+32
+R16
+!i10b 1
+R17
+R30
+R31
+!i113 1
+R11
+R12
+Ebcddtb
+Z32 w1685296855
+R1
+R2
+!i122 307
+R3
+Z33 8C:/Users/ACER/Desktop/VHDL_Labs/BCDdTb.vhd
+Z34 FC:/Users/ACER/Desktop/VHDL_Labs/BCDdTb.vhd
+l0
+L4 1
+VnViR^?oHkazGIghSDkoE;0
+!s100 M96?WMOU@ITB@A@7L]gO]2
+R6
+32
+R16
+!i10b 1
+R17
+Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/BCDdTb.vhd|
+Z36 !s107 C:/Users/ACER/Desktop/VHDL_Labs/BCDdTb.vhd|
+!i113 1
+R11
+R12
+Atestt
+R1
+R2
+DEx4 work 6 bcddtb 0 22 nViR^?oHkazGIghSDkoE;0
+!i122 307
+l22
+L7 48
+V35Aa3fYB3F06gcoMgfofA2
+!s100 :YAG]GoLM:W9K<?hPMUOc3
+R6
+32
+R16
+!i10b 1
+R17
+R35
+R36
+!i113 1
+R11
+R12
+Ebcdtb
+Z37 w1685286298
+R1
+R2
+!i122 304
+R3
+Z38 8C:/Users/ACER/Desktop/VHDL_Labs/BCDtb.vhd
+Z39 FC:/Users/ACER/Desktop/VHDL_Labs/BCDtb.vhd
+l0
+L4 1
+Vg>4W@`MC@8WQ?Aifz0;DZ1
+!s100 CYE9DJVJEM`U@b00hkgJT2
+R6
+32
+R7
+!i10b 1
+R8
+Z40 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/BCDtb.vhd|
+Z41 !s107 C:/Users/ACER/Desktop/VHDL_Labs/BCDtb.vhd|
+!i113 1
+R11
+R12
+Atest
+R1
+R2
+DEx4 work 5 bcdtb 0 22 g>4W@`MC@8WQ?Aifz0;DZ1
+!i122 304
+l15
+L7 95
+V_jXZ6kMo]V;L;inIa0>Xo3
+!s100 66=LCh[^@n3XmYN;_m5Z=1
+R6
+32
+R7
+!i10b 1
+R8
+R40
+R41
+!i113 1
+R11
+R12
+Ecounterjkff
+Z42 w1685364283
+Z43 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z44 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+R1
+R2
+!i122 313
+R3
+Z45 8C:/Users/ACER/Desktop/VHDL_Labs/CounterJKff.vhd
+Z46 FC:/Users/ACER/Desktop/VHDL_Labs/CounterJKff.vhd
+l0
+L6 1
+VZiF^n0?F9RJjH`5ZeG3k53
+!s100 XRKoY@O0PMeNIoDk34cj:2
+R6
+32
+Z47 !s110 1686048156
+!i10b 1
+Z48 !s108 1686048156.000000
+Z49 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/CounterJKff.vhd|
+Z50 !s107 C:/Users/ACER/Desktop/VHDL_Labs/CounterJKff.vhd|
+!i113 1
+R11
+R12
+Acounter
+R43
+R44
+R1
+R2
+DEx4 work 11 counterjkff 0 22 ZiF^n0?F9RJjH`5ZeG3k53
+!i122 313
+l19
+L12 38
+V:<ZGAGb:fK<QRFno^Sln11
+!s100 G2hoAzal`?AS64j:n_e;B0
+R6
+32
+R47
+!i10b 1
+R48
+R49
+R50
+!i113 1
+R11
+R12
+Ecounterjkfftb
+Z51 w1685364344
+R43
+R44
+R1
+R2
+!i122 314
+R3
+Z52 8C:/Users/ACER/Desktop/VHDL_Labs/CounterJKffTb.vhd
+Z53 FC:/Users/ACER/Desktop/VHDL_Labs/CounterJKffTb.vhd
+l0
+L6 1
+V1F=M:=VDVTkGY8J[GH5nf1
+!s100 indU6<3NS^0zz>jBT4K<S0
+R6
+32
+Z54 !s110 1686048157
+!i10b 1
+R48
+Z55 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/CounterJKffTb.vhd|
+Z56 !s107 C:/Users/ACER/Desktop/VHDL_Labs/CounterJKffTb.vhd|
+!i113 1
+R11
+R12
+Acountertb
+R43
+R44
+R1
+R2
+DEx4 work 13 counterjkfftb 0 22 1F=M:=VDVTkGY8J[GH5nf1
+!i122 314
+l19
+Z57 L9 37
+VEkL6=GN:kzkeM0;O_3Y5c2
+!s100 d7nU;m]AgZH>Nl^_d@7Nb1
+R6
+32
+R54
+!i10b 1
+R48
+R55
+R56
+!i113 1
+R11
+R12
+Ed_ff
+Z58 w1685355170
+R44
+R43
+R1
+R2
+!i122 232
+R3
+Z59 8C:/Users/ACER/Desktop/VHDL_Labs/Dff.vhd
+Z60 FC:/Users/ACER/Desktop/VHDL_Labs/Dff.vhd
+l0
+L6 1
+V2LTGn=>EZLaJlfAPfDG8a1
+!s100 o1;9WMoW0[WHeOP;@h2Tb2
+R6
+32
+Z61 !s110 1685355852
+!i10b 1
+Z62 !s108 1685355852.000000
+Z63 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/Dff.vhd|
+Z64 !s107 C:/Users/ACER/Desktop/VHDL_Labs/Dff.vhd|
+!i113 1
+R11
+R12
+Atest
+R44
+R43
+R1
+R2
+DEx4 work 4 d_ff 0 22 2LTGn=>EZLaJlfAPfDG8a1
+!i122 232
+l13
+L11 15
+VgGJ;:K;QnHeKcQ4fMK`il0
+!s100 Y4IhmDObUi]UFhAMW?6_W2
+R6
+32
+R61
+!i10b 1
+R62
+R63
+R64
+!i113 1
+R11
+R12
+Edff
+Z65 w1685373215
+R44
+R43
+R1
+R2
+!i122 311
+R3
+R59
+R60
+l0
+L6 1
+V6F^2I0jkM0BUJf`WJOW541
+!s100 V@Dn3dfjD]>a33cjhADTQ3
+R6
+32
+Z66 !s110 1686048155
+!i10b 1
+Z67 !s108 1686048155.000000
+R63
+R64
+!i113 1
+R11
+R12
+Atest
+R44
+R43
+R1
+R2
+DEx4 work 3 dff 0 22 6F^2I0jkM0BUJf`WJOW541
+!i122 311
+l14
+L12 15
+VCHbAB>keEEbS?RRb9?8IF3
+!s100 O^zU[9S294HMDcTRJQ5kS2
+R6
+32
+R66
+!i10b 1
+R67
+R63
+R64
+!i113 1
+R11
+R12
+Aff
+R43
+R44
+R1
+R2
+DEx4 work 3 dff 0 22 Whb3_N8RKEBD85CcDcO]40
+!i122 229
+l13
+L12 12
+V;C1Nd=ibMan20m=k8R^:32
+!s100 nkSWOagXhhzi`]H4C`m;G3
+R6
+32
+!s110 1685354670
+!i10b 1
+!s108 1685354669.000000
+R63
+R64
+!i113 1
+R11
+R12
+w1685354662
+Edffregister
+Z68 w1685378150
+R44
+R43
+R1
+R2
+!i122 315
+R3
+Z69 8C:/Users/ACER/Desktop/VHDL_Labs/DffRegister.vhd
+Z70 FC:/Users/ACER/Desktop/VHDL_Labs/DffRegister.vhd
+l0
+L6 1
+Vb]RkVh6[ljgBcFzhfh0=n1
+!s100 `5d5d2K0hci26>lCYBdAd0
+R6
+32
+Z71 !s110 1686048159
+!i10b 1
+Z72 !s108 1686048159.000000
+Z73 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/DffRegister.vhd|
+Z74 !s107 C:/Users/ACER/Desktop/VHDL_Labs/DffRegister.vhd|
+!i113 1
+R11
+R12
+Atest
+R44
+R43
+R1
+R2
+DEx4 work 11 dffregister 0 22 b]RkVh6[ljgBcFzhfh0=n1
+!i122 315
+l20
+L13 25
+VM>fH5m=1Kno4ozz2<klmd3
+!s100 JWl8z3^Km:NbVK<_fI[ZD0
+R6
+32
+R71
+!i10b 1
+R72
+R73
+R74
+!i113 1
+R11
+R12
+Edffregistertb
+Z75 w1685373826
+R44
+R43
+R1
+R2
+!i122 316
+R3
+Z76 8C:/Users/ACER/Desktop/VHDL_Labs/DffRegisterTb.vhd
+Z77 FC:/Users/ACER/Desktop/VHDL_Labs/DffRegisterTb.vhd
+l0
+L6 1
+VTYnO=VHj6N6LECFOAJOej2
+!s100 ja2Eiem@@m<hiFk8Mmcfd0
+R6
+32
+R71
+!i10b 1
+R72
+Z78 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/DffRegisterTb.vhd|
+Z79 !s107 C:/Users/ACER/Desktop/VHDL_Labs/DffRegisterTb.vhd|
+!i113 1
+R11
+R12
+Atesteight
+R44
+R43
+R1
+R2
+Z80 DEx4 work 13 dffregistertb 0 22 TYnO=VHj6N6LECFOAJOej2
+!i122 316
+l22
+Z81 L9 80
+Z82 VXhM3<n[<L;63hff1K:d`l1
+Z83 !s100 zQihH<S<Hb?Vf0d0299Q?0
+R6
+32
+R71
+!i10b 1
+R72
+R78
+R79
+!i113 1
+R11
+R12
+Edfftb
+Z84 w1685373288
+R44
+R43
+R1
+R2
+!i122 312
+R3
+Z85 8C:/Users/ACER/Desktop/VHDL_Labs/DffTb.vhd
+Z86 FC:/Users/ACER/Desktop/VHDL_Labs/DffTb.vhd
+l0
+L6 1
+VfCa?fzlk1gCMG]_`i@MI@1
+!s100 AZ;YSNSiCXaZHY`9;9;l10
+R6
+32
+R47
+!i10b 1
+R67
+Z87 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/DffTb.vhd|
+Z88 !s107 C:/Users/ACER/Desktop/VHDL_Labs/DffTb.vhd|
+!i113 1
+R11
+R12
+Atb
+R44
+R43
+R1
+R2
+DEx4 work 5 dfftb 0 22 fCa?fzlk1gCMG]_`i@MI@1
+!i122 312
+l19
+R57
+V0`45dZ6U==goAWhKcDVFg1
+!s100 JZWh5ofM6mSM]ZU43<Ccm3
+R6
+32
+R47
+!i10b 1
+R67
+R87
+R88
+!i113 1
+R11
+R12
+Afftb
+R43
+R44
+R1
+R2
+DEx4 work 5 dfftb 0 22 AEl@6f7iKSj4;=I7_e7OH0
+!i122 228
+l15
+L9 35
+VPlVXz>CZ<8Vem3FXe3bQG1
+!s100 TghQAS2>h59DVZSOHOUTR1
+R6
+32
+!s110 1685354638
+!i10b 1
+!s108 1685354638.000000
+R87
+R88
+!i113 1
+R11
+R12
+w1685354617
+Efa
+Z89 w1685273387
+R1
+R2
+!i122 293
+R3
+Z90 8C:/Users/ACER/Desktop/VHDL_Labs/FA.vhd
+Z91 FC:/Users/ACER/Desktop/VHDL_Labs/FA.vhd
+l0
+L4 1
+V@1J<QbYDEg6ldRDZ9mKzY2
+!s100 >?M?knzGRTZbXB`JfnU^91
+R6
+32
+Z92 !s110 1686048149
+!i10b 1
+Z93 !s108 1686048148.000000
+Z94 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/FA.vhd|
+Z95 !s107 C:/Users/ACER/Desktop/VHDL_Labs/FA.vhd|
+!i113 1
+R11
+R12
+Afa_arch
+R1
+R2
+DEx4 work 2 fa 0 22 @1J<QbYDEg6ldRDZ9mKzY2
+!i122 293
+l14
+L12 8
+VYScL1[U0Z6fE_jJ@Z7V@<3
+!s100 oLP_=XJ;jn[V^YQkiBNmi0
+R6
+32
+R92
+!i10b 1
+R93
+R94
+R95
+!i113 1
+R11
+R12
+Efatb
+Z96 w1685273205
+R1
+R2
+!i122 294
+R3
+Z97 8C:/Users/ACER/Desktop/VHDL_Labs/FAtb.vhd
+Z98 FC:/Users/ACER/Desktop/VHDL_Labs/FAtb.vhd
+l0
+L4 1
+V4oIZ<c3]<`E8PBh@_D4;A0
+!s100 iFdi?PjDNFkAUXh3bX8553
+R6
+32
+R92
+!i10b 1
+Z99 !s108 1686048149.000000
+Z100 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/FAtb.vhd|
+Z101 !s107 C:/Users/ACER/Desktop/VHDL_Labs/FAtb.vhd|
+!i113 1
+R11
+R12
+Atestf
+R1
+R2
+DEx4 work 4 fatb 0 22 4oIZ<c3]<`E8PBh@_D4;A0
+!i122 294
+l18
+L7 20
+Vbgi^UkZ:`AeiNHPWEG:fY2
+!s100 4E_K;^Cf=5d?E@FjWzG8B3
+R6
+32
+R92
+!i10b 1
+R99
+R100
+R101
+!i113 1
+R11
+R12
+Efbadder
+Z102 w1685182142
+R1
+R2
+!i122 299
+R3
+Z103 8C:/Users/ACER/Desktop/VHDL_Labs/FbFa.vhd
+Z104 FC:/Users/ACER/Desktop/VHDL_Labs/FbFa.vhd
+l0
+L5 1
+VId^2O21X1l5bi^YF5GHo30
+!s100 1T9lOlKV>9GS_1?@KY`W10
+R6
+32
+Z105 !s110 1686048151
+!i10b 1
+Z106 !s108 1686048150.000000
+Z107 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/FbFa.vhd|
+Z108 !s107 C:/Users/ACER/Desktop/VHDL_Labs/FbFa.vhd|
+!i113 1
+R11
+R12
+Atest
+R1
+R2
+DEx4 work 7 fbadder 0 22 Id^2O21X1l5bi^YF5GHo30
+!i122 299
+l23
+L13 18
+V^<Te4;GmoL_TDZU0iR=I^3
+!s100 To==`RQc0a?3d[50;dOJ=1
+R6
+32
+R105
+!i10b 1
+R106
+R107
+R108
+!i113 1
+R11
+R12
+Afull
+R1
+R2
+DEx4 work 7 fbadder 0 22 `ePShhOU[]V@U;^S8Z=0V0
+!i122 297
+l11
+L10 7
+VniJO>CMX3=_KUBkW33N[o1
+!s100 bRUO4L]G00E?aUA[VFho01
+R6
+32
+Z109 !s110 1686048150
+!i10b 1
+R106
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/FbAdder.vhd|
+!s107 C:/Users/ACER/Desktop/VHDL_Labs/FbAdder.vhd|
+!i113 1
+R11
+R12
+FC:/Users/ACER/Desktop/VHDL_Labs/FbAdder.vhd
+w1685176956
+8C:/Users/ACER/Desktop/VHDL_Labs/FbAdder.vhd
+Efbaddertb
+Z110 w1685212885
+R1
+R2
+!i122 298
+R3
+Z111 8C:/Users/ACER/Desktop/VHDL_Labs/FbAdderTb.vhd
+Z112 FC:/Users/ACER/Desktop/VHDL_Labs/FbAdderTb.vhd
+l0
+L4 1
+VcI:?BACiIQP?OPBTfi_:@2
+!s100 _0gHZH65oKm3UUK2LK3n62
+R6
+32
+R109
+!i10b 1
+R106
+Z113 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/FbAdderTb.vhd|
+Z114 !s107 C:/Users/ACER/Desktop/VHDL_Labs/FbAdderTb.vhd|
+!i113 1
+R11
+R12
+Afatb
+R1
+R2
+DEx4 work 9 fbaddertb 0 22 cI:?BACiIQP?OPBTfi_:@2
+!i122 298
+l18
+L7 64
+V;LFVaQ@e[e8lPOmm@;zNo3
+!s100 G2D=5e1WYkFM:0d9<lI<i1
+R6
+32
+R109
+!i10b 1
+R106
+R113
+R114
+!i113 1
+R11
+R12
+Efbfatb
+Z115 w1685213558
+R1
+R2
+!i122 300
+R3
+Z116 8C:/Users/ACER/Desktop/VHDL_Labs/FbFaTb.vhd
+Z117 FC:/Users/ACER/Desktop/VHDL_Labs/FbFaTb.vhd
+l0
+L5 1
+Vk:W<`DzDR^_F>m9PK9a5h0
+!s100 z@2DRE@i@@jzE[OAnA7>53
+R6
+32
+R105
+!i10b 1
+Z118 !s108 1686048151.000000
+Z119 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/FbFaTb.vhd|
+Z120 !s107 C:/Users/ACER/Desktop/VHDL_Labs/FbFaTb.vhd|
+!i113 1
+R11
+R12
+Atesttb
+R1
+R2
+DEx4 work 6 fbfatb 0 22 k:W<`DzDR^_F>m9PK9a5h0
+!i122 300
+l24
+L8 46
+V:OXMS?@Hf<T6<GXe:n6^i1
+!s100 86hGHEi]i^0QfPK::[BQa0
+R6
+32
+R105
+!i10b 1
+R118
+R119
+R120
+!i113 1
+R11
+R12
+Efourbitadder
+Z121 w1685112693
+R1
+R2
+!i122 295
+R3
+Z122 8C:/Users/ACER/Desktop/VHDL_Labs/fourbitAdder.vhd
+Z123 FC:/Users/ACER/Desktop/VHDL_Labs/fourbitAdder.vhd
+l0
+L5 1
+V:m;YQZ38_NFB7[@OZ7N==3
+!s100 @CceD<j_F0@ajhGnm:4R;0
+R6
+32
+R92
+!i10b 1
+R99
+Z124 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/fourbitAdder.vhd|
+Z125 !s107 C:/Users/ACER/Desktop/VHDL_Labs/fourbitAdder.vhd|
+!i113 1
+R11
+R12
+Afourbit
+R1
+R2
+DEx4 work 12 fourbitadder 0 22 :m;YQZ38_NFB7[@OZ7N==3
+!i122 295
+l12
+L10 14
+VAWLc^EC:KW?7:3j?dhUXS0
+!s100 L>l:K_ld^1>KnN_LRzn`a1
+R6
+32
+R92
+!i10b 1
+R99
+R124
+R125
+!i113 1
+R11
+R12
+Efourbittest
+Z126 w1685112960
+R1
+R2
+!i122 296
+R3
+Z127 8C:/Users/ACER/Desktop/VHDL_Labs/fourbitTest.vhd
+Z128 FC:/Users/ACER/Desktop/VHDL_Labs/fourbitTest.vhd
+l0
+L4 1
+V]RoT5@:ijkB2oGTcWFKS[1
+!s100 II?glMKFkBWWN[i8ld=JR3
+R6
+32
+R109
+!i10b 1
+R106
+Z129 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/fourbitTest.vhd|
+Z130 !s107 C:/Users/ACER/Desktop/VHDL_Labs/fourbitTest.vhd|
+!i113 1
+R11
+R12
+Atestfb
+R1
+R2
+DEx4 work 11 fourbittest 0 22 ]RoT5@:ijkB2oGTcWFKS[1
+!i122 296
+l16
+L7 30
+VPFaZ5adi8ooA1^T9A6c020
+!s100 X_LYiG<4Ng?[ZMP9R6Th12
+R6
+32
+R109
+!i10b 1
+R106
+R129
+R130
+!i113 1
+R11
+R12
+Eha
+Z131 w1685088566
+R1
+R2
+!i122 291
+R3
+Z132 8C:/Users/ACER/Desktop/VHDL_Labs/HA.vhd
+Z133 FC:/Users/ACER/Desktop/VHDL_Labs/HA.vhd
+l0
+L3 1
+VVcKjTgmF[6<[Y3`42RTh<2
+!s100 _TKPKa?1fM8LIc@[Ma8Vc3
+R6
+32
+Z134 !s110 1686048148
+!i10b 1
+Z135 !s108 1686048146.000000
+Z136 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/HA.vhd|
+Z137 !s107 C:/Users/ACER/Desktop/VHDL_Labs/HA.vhd|
+!i113 1
+R11
+R12
+Aarchha
+R1
+R2
+DEx4 work 2 ha 0 22 VcKjTgmF[6<[Y3`42RTh<2
+!i122 291
+l9
+L8 7
+VH;@^:OV<e1WbYzIS_jN[o2
+!s100 S?PdG_2T9L_h[3cUd`X;F2
+R6
+32
+R134
+!i10b 1
+R135
+R136
+R137
+!i113 1
+R11
+R12
+Aarchhatb
+R1
+R2
+DEx4 work 2 ha 0 22 bjgKFda]bXR>Te<;H22L]1
+!i122 10
+l16
+Z138 L7 16
+VJ[SfTo`>^4aKBR_lTRGdZ2
+!s100 i5iZ?YfALZ@ck6o<39gN50
+R6
+32
+!s110 1685090122
+!i10b 1
+!s108 1685090122.000000
+Z139 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/HAtb.vhd|
+Z140 !s107 C:/Users/ACER/Desktop/VHDL_Labs/HAtb.vhd|
+!i113 1
+R11
+R12
+Z141 FC:/Users/ACER/Desktop/VHDL_Labs/HAtb.vhd
+w1685090119
+Z142 8C:/Users/ACER/Desktop/VHDL_Labs/HAtb.vhd
+Ehatb
+Z143 w1685092789
+R1
+R2
+!i122 292
+R3
+R142
+R141
+l0
+L4 1
+VkoeX4:m>U]V;`Ef9eWHYX3
+!s100 TW4GJQSmmizP[TZV]Dk:k3
+R6
+32
+R134
+!i10b 1
+R93
+R139
+R140
+!i113 1
+R11
+R12
+Atest
+R1
+R2
+DEx4 work 4 hatb 0 22 koeX4:m>U]V;`Ef9eWHYX3
+!i122 292
+l16
+R138
+Vza2B93VOWjFRc>hjBV;Wo3
+!s100 6@j88L=k3J3iH7d2jebXc3
+R6
+32
+R134
+!i10b 1
+R93
+R139
+R140
+!i113 1
+R11
+R12
+Ehatest
+Z144 w1685091876
+R1
+R2
+!i122 18
+R3
+R142
+R141
+l0
+L4 1
+VjdHel0oM[lK=89_JND>F^3
+!s100 >o6S;bVANIOQBSW;SZ6Yd3
+R6
+32
+Z145 !s110 1685091880
+!i10b 1
+Z146 !s108 1685091880.000000
+R139
+R140
+!i113 1
+R11
+R12
+Aarchhatb
+R1
+R2
+DEx4 work 6 hatest 0 22 jdHel0oM[lK=89_JND>F^3
+!i122 18
+l16
+R138
+VIL2H<UDRUZkaQYcOB^jA<1
+!s100 hTJOg3bc=8JC3cJeY7A]f1
+R6
+32
+R145
+!i10b 1
+R146
+R139
+R140
+!i113 1
+R11
+R12
+Ejkff
+Z147 w1685363174
+R43
+R44
+R1
+R2
+!i122 309
+R3
+Z148 8C:/Users/ACER/Desktop/VHDL_Labs/JKff.vhd
+Z149 FC:/Users/ACER/Desktop/VHDL_Labs/JKff.vhd
+l0
+L6 1
+VClHJ[P]^TKNWJ]BCa;fSU0
+!s100 SRj@S;EPf6:[1P2P7A`e>3
+R6
+32
+R23
+!i10b 1
+R24
+Z150 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/JKff.vhd|
+Z151 !s107 C:/Users/ACER/Desktop/VHDL_Labs/JKff.vhd|
+!i113 1
+R11
+R12
+Aff
+R43
+R44
+R1
+R2
+DEx4 work 4 jkff 0 22 ClHJ[P]^TKNWJ]BCa;fSU0
+!i122 309
+l12
+L11 25
+VCo]Yo><IL8kR]b1KHB3Dk3
+!s100 hA0b3gTH:Io9LU@EF@7gk2
+R6
+32
+R23
+!i10b 1
+R24
+R150
+R151
+!i113 1
+R11
+R12
+Ejkfftb
+Z152 w1685363466
+R43
+R44
+R1
+R2
+!i122 310
+R3
+Z153 8C:/Users/ACER/Desktop/VHDL_Labs/JKffTb.vhd
+Z154 FC:/Users/ACER/Desktop/VHDL_Labs/JKffTb.vhd
+l0
+L6 1
+V_=ZXWP2gH[Uo>nV>T7;h;3
+!s100 inJoNk79RKFoTe@WZaQee0
+R6
+32
+R23
+!i10b 1
+R24
+Z155 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/JKffTb.vhd|
+Z156 !s107 C:/Users/ACER/Desktop/VHDL_Labs/JKffTb.vhd|
+!i113 1
+R11
+R12
+Afftb
+R43
+R44
+R1
+R2
+DEx4 work 6 jkfftb 0 22 _=ZXWP2gH[Uo>nV>T7;h;3
+!i122 310
+l16
+L9 59
+VG8XNzd>cMgCYzBUlDTThF3
+!s100 [AC;9V:@WVJFA^a1bdDTf0
+R6
+32
+R23
+!i10b 1
+R24
+R155
+R156
+!i113 1
+R11
+R12
+Esubs
+w1685266530
+R1
+R2
+!i122 144
+R3
+8C:/Users/ACER/Desktop/VHDL_Labs/subs.vhd
+FC:/Users/ACER/Desktop/VHDL_Labs/subs.vhd
+l0
+L4 1
+VKbOa1l;ZdUgzSQ3n<Pa[m1
+!s100 EDgl5dEES7XZD_MzOo2O;1
+R6
+32
+!s110 1685266776
+!i10b 1
+!s108 1685266776.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/subs.vhd|
+!s107 C:/Users/ACER/Desktop/VHDL_Labs/subs.vhd|
+!i113 1
+R11
+R12
+Esubst
+Z157 w1685274146
+R1
+R2
+!i122 301
+R3
+Z158 8C:/Users/ACER/Desktop/VHDL_Labs/subst.vhd
+Z159 FC:/Users/ACER/Desktop/VHDL_Labs/subst.vhd
+l0
+L4 1
+V5o3nbz7CO@6VcWQCTUSf<0
+!s100 77NRKn<]JOc5B8[f:EK912
+R6
+32
+R105
+!i10b 1
+R118
+Z160 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/subst.vhd|
+Z161 !s107 C:/Users/ACER/Desktop/VHDL_Labs/subst.vhd|
+!i113 1
+R11
+R12
+Atests
+R1
+R2
+DEx4 work 5 subst 0 22 5o3nbz7CO@6VcWQCTUSf<0
+!i122 301
+l21
+L13 19
+VP;9_lZ^PMhGVIkU=TV4VS0
+!s100 M87jJS:5dIJ[eY4Lhf^Z80
+R6
+32
+R7
+!i10b 1
+R118
+R160
+R161
+!i113 1
+R11
+R12
+Esubsttb
+Z162 w1685274186
+R1
+R2
+!i122 302
+R3
+Z163 8C:/Users/ACER/Desktop/VHDL_Labs/substTb.vhd
+Z164 FC:/Users/ACER/Desktop/VHDL_Labs/substTb.vhd
+l0
+L4 1
+Va1WXi?Bi[Mi^INMJlnUiP0
+!s100 9aO:5YF[Y3clNTYPo5zlo0
+R6
+32
+R7
+!i10b 1
+R8
+Z165 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ACER/Desktop/VHDL_Labs/substTb.vhd|
+Z166 !s107 C:/Users/ACER/Desktop/VHDL_Labs/substTb.vhd|
+!i113 1
+R11
+R12
+Ateststb
+R1
+R2
+DEx4 work 7 substtb 0 22 a1WXi?Bi[Mi^INMJlnUiP0
+!i122 302
+l27
+L7 81
+VV2a^FB7L]4[gjA7_9Lo4;1
+!s100 CE<WToVT:I3X[W@X_=Jlm1
+R6
+32
+R7
+!i10b 1
+R8
+R165
+R166
+!i113 1
+R11
+R12
+Etb_bcd_7seg
+w1685296613
+R1
+R2
+!i122 197
+R3
+R33
+R34
+l0
+L4 1
+Vnk0o;l]ZGzRVDNbXVjfG_1
+!s100 _UC;P30ACFUOS3d;eEVRX2
+R6
+32
+!s110 1685296619
+!i10b 1
+!s108 1685296619.000000
+R35
+R36
+!i113 1
+R11
+R12
