@@ -1,0 +1,47 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Junction is
+  port (
+    car1_north      : in std_logic;  -- Car 1 coming from the north
+    car2_south      : in std_logic;  -- Car 2 coming from the south
+    car3_east       : in std_logic;  -- Car 3 coming from the east
+    car4_west       : in std_logic;  -- Car 4 coming from the west
+    car2_turn       : in std_logic;  -- Car 2 wants to turn
+    car3_turn       : in std_logic;  -- Car 3 wants to turn
+    car3_straight   : in std_logic;  -- Car 3 wants to go straight
+    car4_turn       : in std_logic;  -- Car 4 wants to turn
+    car4_straight   : in std_logic;  -- Car 4 wants to go straight
+    allow_1_2       : inout std_logic; -- Allow cars 1 and 2 to enter the junction
+    allow_3_4       : inout std_logic; -- Allow cars 3 and 4 to enter the junction
+    allow_1_3       : inout std_logic; -- Allow car 1 and car 3 to enter the junction
+    allow_1_4       : inout std_logic  -- Allow car 1 and car 4 to enter the junction
+  );
+end entity Junction;
+
+architecture Behavioral of Junction is
+begin
+  -- Scenario 1: Car 1 and Car 2 want to go straight
+  allow_1_2 <= '1' when (car1_north = '1' and car2_south = '1') else '0';
+
+  -- Scenario 2: Car 1 wants to go straight, Car 2 wants to turn
+  allow_1_2 <= '0' when (car1_north = '1' and car2_south = '1' and car2_turn = '1') else allow_1_2;
+
+  -- Scenario 3: Car 3 and Car 4 want to go straight
+  allow_3_4 <= '1' when (car3_east = '1' and car4_west = '1') else '0';
+
+  -- Scenario 4: Car 3 wants to go straight, Car 4 wants to turn
+  allow_3_4 <= '0' when (car3_east = '1' and car4_west = '1' and car4_turn = '1') else allow_3_4;
+
+  -- Scenario 5: Car 1 and Car 3 want to enter the junction
+  allow_1_3 <= '0' when (car1_north = '1' and car3_east = '1') else '0';
+
+  -- Scenario 6: Car 1 wants to go straight, Car 3 wants to turn or go straight
+  allow_1_3 <= '1' when (car1_north = '1' and (car3_east = '1' or car3_straight = '1')) else allow_1_3;
+
+  -- Scenario 7: Car 1 and Car 4 want to enter the junction
+  allow_1_4 <= '0' when (car1_north = '1' and car4_west = '1') else '0';
+
+  -- Scenario 8: Car 1 wants to go straight, Car 4 wants to turn
+  allow_1_4 <= '1' when (car1_north = '1' and (car4_west = '1' or car4_turn = '1')) else allow_1_4;
+end architecture Behavioral;
