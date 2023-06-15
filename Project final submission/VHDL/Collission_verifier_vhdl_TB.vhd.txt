@@ -1,0 +1,148 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use std.textio.all;
+
+entity Junction_TB is
+end entity Junction_TB;
+
+architecture Behavioral of Junction_TB is
+  -- Component declaration
+  component Junction is
+    port (
+      car1_north      : in std_logic;
+      car2_south      : in std_logic;
+      car3_east       : in std_logic;
+      car4_west       : in std_logic;
+      car2_turn       : in std_logic;
+      car3_turn       : in std_logic;
+      car3_straight   : in std_logic;
+      car4_turn       : in std_logic;
+      car4_straight   : in std_logic;
+      allow_1_2       : inout std_logic;
+      allow_3_4       : inout std_logic;
+      allow_1_3       : inout std_logic;
+      allow_1_4       : inout std_logic
+    );
+  end component Junction;
+
+  -- Signal declarations
+  signal car1_north_sig    : std_logic := '0';
+  signal car2_south_sig    : std_logic := '0';
+  signal car3_east_sig     : std_logic := '0';
+  signal car4_west_sig     : std_logic := '0';
+  signal car2_turn_sig     : std_logic := '0';
+  signal car3_turn_sig     : std_logic := '0';
+  signal car3_straight_sig : std_logic := '0';
+  signal car4_turn_sig     : std_logic := '0';
+  signal car4_straight_sig : std_logic := '0';
+  signal allow_1_2_sig     : std_logic;
+  signal allow_3_4_sig     : std_logic;
+  signal allow_1_3_sig     : std_logic;
+  signal allow_1_4_sig     : std_logic;
+
+begin
+  -- Instantiate the DUT (Design Under Test)
+  dut: Junction
+    port map (
+      car1_north      => car1_north_sig,
+      car2_south      => car2_south_sig,
+      car3_east       => car3_east_sig,
+      car4_west       => car4_west_sig,
+      car2_turn       => car2_turn_sig,
+      car3_turn       => car3_turn_sig,
+      car3_straight   => car3_straight_sig,
+      car4_turn       => car4_turn_sig,
+      car4_straight   => car4_straight_sig,
+      allow_1_2       => allow_1_2_sig,
+      allow_3_4       => allow_3_4_sig,
+      allow_1_3       => allow_1_3_sig,
+      allow_1_4       => allow_1_4_sig
+    );
+
+  -- Stimulus process
+  stimulus_proc: process
+  begin
+    -- Scenario 1: Car 1 and Car 2 want to go straight
+    car1_north_sig    <= '1';
+    car2_south_sig    <= '1';
+    car2_turn_sig     <= '0';
+    car3_east_sig     <= '0';
+    car4_west_sig     <= '0';
+    car3_turn_sig     <= '0';
+    car3_straight_sig <= '0';
+    car4_turn_sig     <= '0';
+    car4_straight_sig <= '0';
+    wait for 10 ns;
+
+    assert allow_1_2_sig = '1'
+      report "Scenario 1: Car 1 and Car 2 want to go straight - No collision"
+      severity note;
+
+    -- Scenario 2: Car 1 wants to go straight, Car 2 wants to turn
+    car1_north_sig    <= '1';
+    car2_south_sig    <= '1';
+    car2_turn_sig     <= '1';
+    wait for 10 ns;
+
+    assert allow_1_2_sig = '0'
+      report "Scenario 2: Car 1 wants to go straight, Car 2 wants to turn - Collision will occur"
+      severity failure;
+
+    -- Scenario 3: Car 3 and Car 4 want to go straight
+    car1_north_sig    <= '0';
+    car2_south_sig    <= '0';
+    car2_turn_sig     <= '0';
+    car3_east_sig     <= '1';
+    car4_west_sig     <= '1';
+    car3_turn_sig     <= '0';
+    car3_straight_sig <= '0';
+    car4_turn_sig     <= '0';
+    car4_straight_sig <= '0';
+    wait for 10 ns;
+
+    assert allow_3_4_sig = '1'
+      report "Scenario 3: Car 3 and Car 4 want to go straight - No collision"
+      severity note;
+
+    -- Scenario 4: Car 3 wants to go straight, Car 4 wants to turn
+    car1_north_sig    <= '0';
+    car2_south_sig    <= '0';
+    car2_turn_sig     <= '0';
+    car3_east_sig     <= '1';
+    car4_west_sig     <= '1';
+    car4_turn_sig     <= '1';
+    wait for 10 ns;
+
+    assert allow_3_4_sig = '0'
+      report "Scenario 4: Car 3 wants to go straight, Car 4 wants to turn - Collision will occur"
+      severity failure;
+
+    
+
+    -- Scenario 5: Car 1 wants to go straight, Car 3 wants to turn or go straight
+    car1_north_sig    <= '1';
+    car3_east_sig     <= '1';
+    car3_turn_sig     <= '1';
+    wait for 10 ns;
+
+    assert allow_1_3_sig = '0'
+      report "Scenario 5: Car 1 wants to go straight, Car 3 wants to turn or go straight - Collision will occur"
+      severity failure;
+
+    
+
+    -- Scenario 6: Car 1 wants to go straight, Car 4 wants to turn
+    car1_north_sig    <= '1';
+    car4_west_sig     <= '1';
+    car4_turn_sig     <= '1';
+    wait for 10 ns;
+
+    assert allow_1_4_sig = '0'
+      report "Scenario 6: Car 1 wants to go straight, Car 4 wants to turn - Collision will occur"
+      severity failure;
+
+    wait;
+  end process stimulus_proc;
+
+end architecture Behavioral;
