@@ -2,6 +2,7 @@
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
 #include <freertos/queue.h>
+#include <freertos/semphr.h>
 
 // Define the turn direction options
 enum TurnDirection {
@@ -13,6 +14,8 @@ enum TurnDirection {
 // Define the road names
 const char* roadNames[] = {"North", "East", "South", "West"};
 SemaphoreHandle_t deadlockSemaphore;
+SemaphoreHandle_t carPassedMutex;
+
 // Structure to represent a car
 struct Car {
   int id;
@@ -46,15 +49,23 @@ void intersectionControllerTask(void* parameter) {
         Serial.println("----------------------------------------------------------------------------------------------------------------------------------------------------------");
         vTaskDelay(1000); // Simulate the cars passing through the intersection
         count++;
+
+        // Protect the critical section with the mutex
+        xSemaphoreTake(carPassedMutex, portMAX_DELAY);
         carPassed = true;
+        xSemaphoreGive(carPassedMutex);
       } else {
         // Only the car from the North road can pass
 
-          Serial.printf("\n                                   Normal Sequence : North_Car is allowed to cross the junction -> East_Car,-> Southast_Car,-> West_Car in sequence.\n",  roadNames[car.roadIndex]);
-                        Serial.println("----------------------------------------------------------------------------------------------------------------------------------------------------------");
+        Serial.printf("\n                                   Normal Sequence : North_Car is allowed to cross the junction -> East_Car,-> Southast_Car,-> West_Car in sequence.\n",  roadNames[car.roadIndex]);
+        Serial.println("----------------------------------------------------------------------------------------------------------------------------------------------------------");
 
         count++;
+
+        // Protect the critical section with the mutex
+        xSemaphoreTake(carPassedMutex, portMAX_DELAY);
         carPassed = true;
+        xSemaphoreGive(carPassedMutex);
       }
     }
 
@@ -69,24 +80,36 @@ void intersectionControllerTask(void* parameter) {
           Serial.println("----------------------------------------------------------------------------------------------------------------------------------------------------------");
           vTaskDelay(1000); // Simulate the cars passing through the intersection
           count++;
+
+          // Protect the critical section with the mutex
+          xSemaphoreTake(carPassedMutex, portMAX_DELAY);
           carPassed = true;
+          xSemaphoreGive(carPassedMutex);
         } else {
           // Only the car from the East road can pass
 
           Serial.printf("\n                                   Normal Sequence : North_Car is allowed to cross the junction -> East_Car,-> Southast_Car,-> West_Car in sequence.\n",  roadNames[car.roadIndex]);
-                              Serial.println("----------------------------------------------------------------------------------------------------------------------------------------------------------");
+          Serial.println("----------------------------------------------------------------------------------------------------------------------------------------------------------");
 
           count++;
+
+          // Protect the critical section with the mutex
+          xSemaphoreTake(carPassedMutex, portMAX_DELAY);
           carPassed = true;
+          xSemaphoreGive(carPassedMutex);
         }
       } else if (xQueueReceive(southQueue, &car, 0) == pdTRUE) {
         // Only the car from the South road can pass
 
-          Serial.printf("\n                                   Normal Sequence : North_Car is allowed to cross the junction -> East_Car,-> Southast_Car,-> West_Car in sequence.\n",  roadNames[car.roadIndex]);
-                        Serial.println("----------------------------------------------------------------------------------------------------------------------------------------------------------");
+        Serial.printf("\n                                   Normal Sequence : North_Car is allowed to cross the junction -> East_Car,-> Southast_Car,-> West_Car in sequence.\n",  roadNames[car.roadIndex]);
+        Serial.println("----------------------------------------------------------------------------------------------------------------------------------------------------------");
 
         count++;
+
+        // Protect the critical section with the mutex
+        xSemaphoreTake(carPassedMutex, portMAX_DELAY);
         carPassed = true;
+        xSemaphoreGive(carPassedMutex);
       } else if (xQueueReceive(westQueue, &car, 0) == pdTRUE) {
         // Check for a matching scenario with a car approaching from the East road
         Car oppositeCar;
@@ -96,15 +119,23 @@ void intersectionControllerTask(void* parameter) {
           Serial.println("----------------------------------------------------------------------------------------------------------------------------------------------------------");
           vTaskDelay(1000); // Simulate the cars passing through the intersection
           count++;
+
+          // Protect the critical section with the mutex
+          xSemaphoreTake(carPassedMutex, portMAX_DELAY);
           carPassed = true;
+          xSemaphoreGive(carPassedMutex);
         } else {
           // Only the car from the West road can pass
 
           Serial.printf("\n                                   Normal Sequence : North_Car is allowed to cross the junction -> East_Car,-> Southast_Car,-> West_Car in sequence.\n",  roadNames[car.roadIndex]);
-                              Serial.println("----------------------------------------------------------------------------------------------------------------------------------------------------------");
+          Serial.println("----------------------------------------------------------------------------------------------------------------------------------------------------------");
 
           count++;
+
+          // Protect the critical section with the mutex
+          xSemaphoreTake(carPassedMutex, portMAX_DELAY);
           carPassed = true;
+          xSemaphoreGive(carPassedMutex);
         }
       }
     }
@@ -116,6 +147,7 @@ void intersectionControllerTask(void* parameter) {
     vTaskDelay(100);
   }
 }
+
 
 
 
@@ -247,6 +279,9 @@ void deadlockDetectionTask(void* parameter) {
 void setup() {
   Serial.begin(115200);
 
+carPassedMutex = xSemaphoreCreateMutex();
+deadlockSemaphore = xSemaphoreCreateBinary();
+
   // Create the queues for each road
   northQueue = xQueueCreate(10, sizeof(Car));
   eastQueue = xQueueCreate(10, sizeof(Car));
@@ -258,7 +293,7 @@ void setup() {
   xTaskCreatePinnedToCore(core1Task, "Core1Task", 4096, NULL, 1, NULL, 1);
 // Create the deadlock detection task and schedule it to run on Core 0
   xTaskCreatePinnedToCore(deadlockDetectionTask, "DeadlockDetectionTask", 4096, NULL, 1, NULL, 0);
-deadlockSemaphore = xSemaphoreCreateBinary();
+
 }
 
 void loop() {
