@@ -151,7 +151,7 @@ void intersectionControllerTask(void* parameter) {
 
 
 
-void core1Task(void* parameter) {
+void fillCarIdDirToQueues(void* parameter) {
   while (true) {
     
     // This code will run on Core 1
@@ -289,10 +289,10 @@ deadlockSemaphore = xSemaphoreCreateBinary();
   westQueue = xQueueCreate(10, sizeof(Car));
 
   // Create the intersection controller task
-  xTaskCreatePinnedToCore(intersectionControllerTask, "IntersectionControllerTask", 4096, NULL, 1, NULL, 0);
-  xTaskCreatePinnedToCore(core1Task, "Core1Task", 4096, NULL, 1, NULL, 1);
+  xTaskCreatePinnedToCore(intersectionControllerTask, "IntersectionControllerTask", 4096, NULL, 1, NULL,tskNO_AFFINITY);
+  xTaskCreatePinnedToCore(fillCarIdDirToQueues, "fillQueues", 4096, NULL, 1, NULL,tskNO_AFFINITY);
 // Create the deadlock detection task and schedule it to run on Core 0
-  xTaskCreatePinnedToCore(deadlockDetectionTask, "DeadlockDetectionTask", 4096, NULL, 1, NULL, 0);
+  xTaskCreatePinnedToCore(deadlockDetectionTask, "DeadlockDetectionTask", 4096, NULL, 1, NULL,tskNO_AFFINITY);
 
 }
 
