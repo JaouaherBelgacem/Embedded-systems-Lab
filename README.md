@@ -1,12 +1,5 @@
 # Embedded-systems-Lab
 ------------------------------TASKS--------------------------------------
 
-Task1: Req diag - Neaz //
-       UC V2V - Jaouaher //
-       UC V2I - Nirojan
-*************************************************************************
-
-Task 2: Act diag traffic controller - Jaouaher //
-        Act diag cars crossing intersec - Nerojan //
-        Seq diag V2I comm - Neaz 
-*************************************************************************
+Every group member worked on the different parts and we always make a decision as a team for the best solution.
+The final submission of the different project parts have been improved and checked by all the team mebers.
